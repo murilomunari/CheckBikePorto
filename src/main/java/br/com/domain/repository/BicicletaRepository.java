@@ -1,6 +1,7 @@
 package br.com.domain.repository;
 
 import br.com.domain.entity.Bicicleta;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,7 +43,7 @@ public class BicicletaRepository {
         return bicicletasEncontradas;
     }
 
-    public List<Bicicleta> findByprice(String preco){
+    public List<Bicicleta> findByPrice(String preco){
         List<Bicicleta> precoCompativel = new ArrayList<>();
         for (Bicicleta b : bicicletas){
             if (b.getPreco().equalsIgnoreCase(preco)){
@@ -52,7 +53,7 @@ public class BicicletaRepository {
         return precoCompativel;
     }
 
-    public Bicicleta persist(Bicicleta b){
+    public Bicicleta persist(@NotNull Bicicleta b){
         b.setId(bicicletas.size()+ 1L);
         bicicletas.add(b);
         return b;

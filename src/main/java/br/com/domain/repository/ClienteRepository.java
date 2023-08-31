@@ -12,7 +12,7 @@ public class ClienteRepository {
     public ClienteRepository(){
         clientes = new ArrayList<>();
     }
-    public List<Cliente> findall(){
+    public List<Cliente> findAll(){
         return clientes;
     }
 
@@ -35,5 +35,19 @@ public class ClienteRepository {
         return clientesCadastrado;
     }
 
+    public List<Cliente> findByCpf(String CPF){
+        List<Cliente> cpfCadastrado = new ArrayList<>();
+        for (Cliente c : clientes){
+            if (c.getCPF().equalsIgnoreCase(CPF)){
+                cpfCadastrado.add(c);
+            }
+        }
+        return cpfCadastrado;
+    }
 
+    public Cliente persist(Cliente c){
+        c.setId(clientes.size() + 1L);
+        this.clientes.add(c);
+        return c;
+    }
 }

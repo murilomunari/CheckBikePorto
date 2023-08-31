@@ -118,4 +118,7 @@ public class Cliente {
                 ", nascimento='" + nascimento + '\'' +
                 '}';
     }
+
+    public void addBicicleta(String bicicletas) {
+    }
 }

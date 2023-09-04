@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class BicicletaRepository {
+public class BicicletaRepository implements Repository<Bicicleta, Long>{
 
     private static List<Bicicleta> bicicletas;
 

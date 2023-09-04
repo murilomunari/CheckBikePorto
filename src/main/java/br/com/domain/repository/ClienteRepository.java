@@ -5,7 +5,7 @@ import br.com.domain.entity.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteRepository {
+public class ClienteRepository implements Repository<Cliente, Long>{
 
     private List<Cliente> clientes;
 
@@ -34,6 +34,7 @@ public class ClienteRepository {
         }
         return clientesCadastrado;
     }
+
 
     public List<Cliente> findByCpf(String CPF){
         List<Cliente> cpfCadastrado = new ArrayList<>();

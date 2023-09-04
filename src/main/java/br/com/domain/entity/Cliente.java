@@ -8,28 +8,16 @@ public class Cliente {
 
     private String CPF;
 
-    private String CEP;
-
-    private String complemento;
-
-    private String telefone;
-
-    private String email;
-
-    private String nascimento;
+    public void addBicicleta(String bicicletas) {
+    }
 
     public Cliente() {
     }
 
-    public Cliente(Long id, String nome, String CPF, String CEP, String complemento, String telefone, String email, String nascimento) {
+    public Cliente(Long id, String nome, String CPF) {
         this.id = id;
         this.nome = nome;
         this.CPF = CPF;
-        this.CEP = CEP;
-        this.complemento = complemento;
-        this.telefone = telefone;
-        this.email = email;
-        this.nascimento = nascimento;
     }
 
 
@@ -60,65 +48,14 @@ public class Cliente {
         return this;
     }
 
-    public String getCEP() {
-        return CEP;
-    }
-
-    public Cliente setCEP(String CEP) {
-        this.CEP = CEP;
-        return this;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public Cliente setComplemento(String complemento) {
-        this.complemento = complemento;
-        return this;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public Cliente setTelefone(String telefone) {
-        this.telefone = telefone;
-        return this;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public Cliente setEmail(String email) {
-        this.email = email;
-        return this;
-    }
-
-    public String getNascimento() {
-        return nascimento;
-    }
-
-    public Cliente setNascimento(String nascimento) {
-        this.nascimento = nascimento;
-        return this;
-    }
-
     @Override
     public String toString() {
         return "Cliente{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", CPF='" + CPF + '\'' +
-                ", CEP='" + CEP + '\'' +
-                ", complemento='" + complemento + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", email='" + email + '\'' +
-                ", nascimento='" + nascimento + '\'' +
                 '}';
     }
-
-    public void addBicicleta(String bicicletas) {
-    }
 }
+
+

@@ -9,7 +9,7 @@ public interface Repository<T, U> {
 
     public T findById(U id);
 
-    public List<T> findByName(String nome);
+    public List<T> findByName(String texto);
 
 
     public T persist(T t);

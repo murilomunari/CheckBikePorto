@@ -1,5 +1,9 @@
 package br.com.domain.entity;
 
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
 public class Bicicleta {
 
     private Long id;
@@ -7,15 +11,20 @@ public class Bicicleta {
 
     private String preco;
 
+    private Set<Bicicleta> bicicletas = new HashSet<>();
+
     public Bicicleta() {
     }
 
-    public Bicicleta(Long id, String modeloBicicleta, String preco) {
-        this.id = id;
-        this.modeloBicicleta = modeloBicicleta;
-        this.preco = preco;
+    public Bicicleta(Long id, String modeloBicicleta, String preco, Set<Bicicleta> bicicletas) {
+        this.setId(id);
+        this.setModeloBicicleta(modeloBicicleta);
+        this.setPreco(preco);
+        this.setBicicletas(Objects.isNull(bicicletas) ? new HashSet<>() : bicicletas);
     }
 
+    public Bicicleta(long l, String modelo, String preco) {
+    }
 
     public Long getId() {
         return id;
@@ -44,12 +53,22 @@ public class Bicicleta {
         return this;
     }
 
+    public Set<Bicicleta> getBicicletas() {
+        return bicicletas;
+    }
+
+    public Bicicleta setBicicletas(Set<Bicicleta> bicicletas) {
+        this.bicicletas = bicicletas;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "Bicicleta{" +
                 "id=" + id +
                 ", modeloBicicleta='" + modeloBicicleta + '\'' +
                 ", preco='" + preco + '\'' +
+                ", bicicletas=" + bicicletas +
                 '}';
     }
 }

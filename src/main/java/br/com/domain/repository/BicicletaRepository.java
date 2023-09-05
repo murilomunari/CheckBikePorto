@@ -33,10 +33,10 @@ public class BicicletaRepository implements Repository<Bicicleta, Long>{
         }
         return null;
     }
-    public List<Bicicleta> findByName(String modelo){
+    public List<Bicicleta> findByName(String texto){
         List<Bicicleta> bicicletasEncontradas = new ArrayList<>();
         for (Bicicleta b : bicicletas){
-            if (b.getModeloBicicleta().equalsIgnoreCase(modelo)){
+            if (b.getModeloBicicleta().equalsIgnoreCase(texto)){
                 bicicletasEncontradas.add(b);
             }
         }

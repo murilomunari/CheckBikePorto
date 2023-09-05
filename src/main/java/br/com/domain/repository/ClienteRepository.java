@@ -25,10 +25,10 @@ public class ClienteRepository implements Repository<Cliente, Long>{
         return null;
     }
 
-    public List<Cliente> findByName(String nome){
+    public List<Cliente> findByName(String texto){
         List<Cliente> clientesCadastrado = new ArrayList<>();
         for (Cliente c: clientes){
-            if (c.getNome().equalsIgnoreCase(nome)){
+            if (c.getNome().equalsIgnoreCase(texto)){
                 clientesCadastrado.add(c);
             }
         }

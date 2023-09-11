@@ -20,7 +20,7 @@ public class BicicletaRepository implements Repository<Bicicleta, Long>{
 
         bicicletas.addAll(Arrays.asList(bmx, corrida, trail));
     }
-
+    @Override
     public List<Bicicleta> findAll(){
         return  bicicletas;
     }
@@ -33,6 +33,7 @@ public class BicicletaRepository implements Repository<Bicicleta, Long>{
         }
         return null;
     }
+    @Override
     public List<Bicicleta> findByName(String modelo){
         List<Bicicleta> bicicletasEncontradas = new ArrayList<>();
         for (Bicicleta b : bicicletas){
@@ -52,7 +53,7 @@ public class BicicletaRepository implements Repository<Bicicleta, Long>{
         }
         return precoCompativel;
     }
-
+    @Override
     public Bicicleta persist(@NotNull Bicicleta b){
         b.setId(bicicletas.size()+ 1L);
         bicicletas.add(b);

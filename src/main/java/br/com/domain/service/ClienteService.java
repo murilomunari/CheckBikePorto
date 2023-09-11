@@ -22,12 +22,12 @@ public class ClienteService implements Service<Cliente, Long>{
         return repository.findById(id);
     }
     @Override
-    public List<Cliente> findByName(String texto){
-        return repository.findByName(texto);
+    public List<Cliente> findByUsario(String usario){
+        return repository.findByName(usario);
     }
 
-    public List<Cliente> findByCpf(String CPF){
-        return repository.findByCpf(CPF);
+    public List<Cliente> findBysenha(String senha){
+        return repository.findBySenha(senha);
     }
     @Override
     public Cliente persist(Cliente cliente){

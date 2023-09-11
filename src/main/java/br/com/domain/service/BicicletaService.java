@@ -22,7 +22,7 @@ public class BicicletaService implements Service<Bicicleta, Long> {
         return repository.findById(id);
     }
     @Override
-    public List<Bicicleta> findByName(String texto){
+    public List<Bicicleta> findByUsario(String texto){
         return repository.findByName(texto);
     }
     @Override

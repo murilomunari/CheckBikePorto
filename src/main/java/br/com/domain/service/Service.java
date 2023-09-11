@@ -8,7 +8,7 @@ public interface Service<T, U> {
 
     public T findById(U id);
 
-    public List<T> findByName(String texto);
+    public List<T> findByUsario(String texto);
 
     public T persist(T t);
 }

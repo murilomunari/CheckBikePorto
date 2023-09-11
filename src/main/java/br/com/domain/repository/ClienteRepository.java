@@ -29,17 +29,17 @@ public class ClienteRepository implements Repository<Cliente, Long>{
     public List<Cliente> findByName(String nome){
         List<Cliente> clientesCadastrado = new ArrayList<>();
         for (Cliente c: clientes){
-            if (c.getNome().equalsIgnoreCase(nome)){
+            if (c.getUsuario().equalsIgnoreCase(nome)){
                 clientesCadastrado.add(c);
             }
         }
         return clientesCadastrado;
     }
 
-    public List<Cliente> findByCpf(String CPF){
+    public List<Cliente> findBySenha(String senha){
         List<Cliente> cpfCadastrado = new ArrayList<>();
         for (Cliente c : clientes){
-            if (c.getCPF().equalsIgnoreCase(CPF)){
+            if (c.getSenha().equalsIgnoreCase(senha)){
                 cpfCadastrado.add(c);
             }
         }

@@ -7,4 +7,5 @@ Felipe Morais RM 551463
 Eduardo Fianrdi  RM 98624
 
 # CheckBikePorto
-Nosso objetivo e primeiro cadastrar o cliente caso ele não tenha, pos isso ele irá fornecer todas as irfomações de sua bicicleta, como peças adicionais ano e valor de sua bicicleta 
+
+As principais funções do programa são permitir que o usuário insira seu nome de usuário e senha, em seguida, especificar o tipo de bicicleta que possui e todas as suas peças relevantes, a fim de contratar o seu seguro junto à Porto Seguro.

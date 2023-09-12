@@ -23,7 +23,7 @@ public class MenuView {
 
         do {
             escolha = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma opção: \n" +
-                    "1 - Adicionar Cliente \n" +
+                    "1 - Entrar na conta \n" +
                     "2 - Encerrar programa"));
 
             if (escolha == 1) {
@@ -59,13 +59,16 @@ public class MenuView {
         BicicletaRepository bicicletaRepository = new BicicletaRepository();
         bicicletas = bicicletaRepository.findAll();
 
-        if (bicicletas.size() > 0) {
+        if (!bicicletas.isEmpty()) {
             Bicicleta bicicletaEscolhida = escolherBicicleta(bicicletas);
 
             if (bicicletaEscolhida == null) {
                 System.out.println("Cliente não foi criado.");
                 return null;
             }
+
+
+            bicicletaEscolhida.setId(null);
 
             cliente.addBicicleta(String.valueOf(bicicletaEscolhida));
 
@@ -80,6 +83,7 @@ public class MenuView {
         }
         return null;
     }
+
 
     private Bicicleta escolherBicicleta(List<Bicicleta> bicicletas) {
         Object[] bicicletasArray = bicicletas.toArray();

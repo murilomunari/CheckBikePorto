@@ -11,18 +11,17 @@ public class BicicletaRepository implements Repository<Bicicleta, Long> {
     private static List<Bicicleta> bicicletas;
 
     static {
-
         bicicletas = new ArrayList<>();
 
-        Bicicleta traill = new Bicicleta(1L, "Bicicleta de traill");
-        Bicicleta bmx = new Bicicleta(2L, "Bicicleta de bmx");
-        Bicicleta speed = new Bicicleta(3L, "Bicicleta de Corrida");
-        Bicicleta dobravel = new Bicicleta(4L, "Bicicleta dobravel");
-        Bicicleta passeio = new Bicicleta(5L, "Bicicleta de passeio");
-        Bicicleta urbana = new Bicicleta(6L, "Bicicleta urbana");
+        Bicicleta traill = new Bicicleta(1L, "Modelo para montanhas");
+        Bicicleta bmx = new Bicicleta(2L, "Bicicleta bmx");
+        Bicicleta speed = new Bicicleta(3L, "Biciccleta para corrida");
+        Bicicleta urbana = new Bicicleta(4L, "Bicicleta para a cidade");
+        Bicicleta dobravel = new Bicicleta(5L, "Biciccleta dobravel");
 
-        bicicletas.addAll(Arrays.asList(traill, bmx, speed, dobravel, passeio, urbana));
+        bicicletas.addAll(Arrays.asList(traill, bmx, speed, urbana, dobravel));
     }
+
 
     @Override
     public List<Bicicleta> findAll() {
@@ -31,7 +30,7 @@ public class BicicletaRepository implements Repository<Bicicleta, Long> {
 
     @Override
     public Bicicleta findById(Long id) {
-        for (int i=0; i<bicicletas.size(); i++){
+        for (int i = 0; i< bicicletas.size(); i++){
             if (bicicletas.get(i).getId().equals(id)){
                 return bicicletas.get(i);
             }
@@ -52,7 +51,7 @@ public class BicicletaRepository implements Repository<Bicicleta, Long> {
 
     @Override
     public Bicicleta persist(Bicicleta b) {
-        b.setId(bicicletas.size()+ 1L);
+        b.setId(bicicletas.size()+1L);
         bicicletas.add(b);
         return b;
     }

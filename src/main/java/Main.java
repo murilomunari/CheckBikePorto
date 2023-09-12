@@ -5,6 +5,5 @@ public class Main {
 
         MenuView view = new MenuView();
         view.menu();
-
     }
 }

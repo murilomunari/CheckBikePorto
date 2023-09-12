@@ -1,7 +1,6 @@
 package br.com.domain.entity;
 
 
-
 public class Bicicleta {
     private Long id;
 
@@ -11,7 +10,10 @@ public class Bicicleta {
 
     private String nome;
 
-    public Bicicleta(long l, String tipo, double preco) {
+    public Bicicleta(long l, String modeloBicicleta) {
+        this.id = id;
+        this.modeloBicicleta = modeloBicicleta;
+
     }
 
     public void set(String bicicleta) {

@@ -8,15 +8,20 @@ import java.util.List;
 
 public class BicicletaRepository implements Repository<Bicicleta, Long> {
 
-    private static List<Bicicleta> bicicletas = new ArrayList<>();
-    private static long nextId = 4; // Próximo ID disponível após os IDs iniciais
+    private static List<Bicicleta> bicicletas;
 
     static {
-        Bicicleta bmx = new Bicicleta(1L, "BMX", 5000.0);
-        Bicicleta corrida = new Bicicleta(2L, "Bicicleta de corrida", 30000.0);
-        Bicicleta trail = new Bicicleta(3L, "Bicicleta de trail", 10000.0);
 
-        bicicletas.addAll(Arrays.asList(bmx, corrida, trail));
+        bicicletas = new ArrayList<>();
+
+        Bicicleta traill = new Bicicleta(1L, "Bicicleta de traill");
+        Bicicleta bmx = new Bicicleta(2L, "Bicicleta de bmx");
+        Bicicleta speed = new Bicicleta(3L, "Bicicleta de Corrida");
+        Bicicleta dobravel = new Bicicleta(4L, "Bicicleta dobravel");
+        Bicicleta passeio = new Bicicleta(5L, "Bicicleta de passeio");
+        Bicicleta urbana = new Bicicleta(6L, "Bicicleta urbana");
+
+        bicicletas.addAll(Arrays.asList(traill, bmx, speed, dobravel, passeio, urbana));
     }
 
     @Override
@@ -26,19 +31,19 @@ public class BicicletaRepository implements Repository<Bicicleta, Long> {
 
     @Override
     public Bicicleta findById(Long id) {
-        for (Bicicleta b : bicicletas) {
-            if (b.getId().equals(id)) {
-                return b;
+        for (int i=0; i<bicicletas.size(); i++){
+            if (bicicletas.get(i).getId().equals(id)){
+                return bicicletas.get(i);
             }
         }
         return null;
     }
 
     @Override
-    public List<Bicicleta> findByName(String texto) {
+    public List<Bicicleta> findByName(String nome) {
         List<Bicicleta> bicicletasEncontradas = new ArrayList<>();
-        for (Bicicleta b : bicicletas) {
-            if (b.getModeloBicicleta().equalsIgnoreCase(texto)) {
+        for (Bicicleta b : bicicletas){
+            if (b.getNome().equalsIgnoreCase(nome)){
                 bicicletasEncontradas.add(b);
             }
         }
@@ -57,7 +62,7 @@ public class BicicletaRepository implements Repository<Bicicleta, Long> {
 
     @Override
     public Bicicleta persist(Bicicleta b) {
-        b.setId(nextId++);
+        b.setId(bicicletas.size()+ 1L);
         bicicletas.add(b);
         return b;
     }

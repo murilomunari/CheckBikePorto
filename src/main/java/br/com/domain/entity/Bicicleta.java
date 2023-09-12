@@ -6,14 +6,11 @@ public class Bicicleta {
 
     private String modeloBicicleta;
 
-    private double preco;
-
     private String nome;
 
     public Bicicleta(long l, String modeloBicicleta) {
         this.id = id;
         this.modeloBicicleta = modeloBicicleta;
-
     }
 
     public void set(String bicicleta) {
@@ -25,7 +22,6 @@ public class Bicicleta {
     public Bicicleta(Long id, String modeloBicicleta, double preco, String nome) {
         this.id = id;
         this.modeloBicicleta = modeloBicicleta;
-        this.preco = preco;
         this.nome = nome;
     }
 
@@ -48,14 +44,6 @@ public class Bicicleta {
         return this;
     }
 
-    public double getPreco() {
-        return preco;
-    }
-
-    public Bicicleta setPreco(double preco) {
-        this.preco = preco;
-        return this;
-    }
 
     public String getNome() {
         return nome;
@@ -71,7 +59,6 @@ public class Bicicleta {
         return "Bicicleta{" +
                 "id=" + id +
                 ", modeloBicicleta='" + modeloBicicleta + '\'' +
-                ", preco=" + preco +
                 ", nome='" + nome + '\'' +
                 '}';
     }

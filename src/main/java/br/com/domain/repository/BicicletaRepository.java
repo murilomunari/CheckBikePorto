@@ -50,16 +50,6 @@ public class BicicletaRepository implements Repository<Bicicleta, Long> {
         return bicicletasEncontradas;
     }
 
-    public List<Bicicleta> findByPrice(double preco) {
-        List<Bicicleta> precoCompativel = new ArrayList<>();
-        for (Bicicleta b : bicicletas) {
-            if (b.getPreco() == preco) {
-                precoCompativel.add(b);
-            }
-        }
-        return precoCompativel;
-    }
-
     @Override
     public Bicicleta persist(Bicicleta b) {
         b.setId(bicicletas.size()+ 1L);

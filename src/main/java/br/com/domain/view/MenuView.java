@@ -67,7 +67,7 @@ public class MenuView {
                 return null;
             }
 
-            cliente.addBicicleta(String.valueOf(bicicletaEscolhida)); // Adiciona a bicicleta ao cliente
+            cliente.addBicicleta(String.valueOf(bicicletaEscolhida));
 
             Cliente persist = service.persist(cliente);
 
